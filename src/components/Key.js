@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 
 const Key = ({ audioContext, noteName, frequency, waveform }) => {
 
@@ -18,12 +18,12 @@ const Key = ({ audioContext, noteName, frequency, waveform }) => {
         noteOsc.stop(audioContext.currentTime + 0.25)
     }
 
-    const handleKeyPress = () => {
+    const handleKeyDown = () => {
         makeBeep(frequency, waveform)
     }
 
     return (
-        <button onClick={handleKeyPress}>Key {noteName}</button>
+        <button onMouseDown={handleKeyDown}>Key {noteName}</button>
     )
 }
 

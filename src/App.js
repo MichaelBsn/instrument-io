@@ -12,7 +12,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>instrument-react</h1>
       {audioContext ? (
         <div className='keyboard'>
           <Key
@@ -77,7 +76,11 @@ function App() {
             waveform={'triangle'} />
         </div>
       ) : (
-        <button onClick={handleClick}>Click to use device audio</button>
+        <>
+          <h1>instrument-react</h1>
+          <button onClick={handleClick}>Click to use device audio</button>
+        </>
+
       )}
     </div>
   );

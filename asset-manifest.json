@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/instrument-io/static/css/main.b4b731ad.css",
-    "main.js": "/instrument-io/static/js/main.90cad702.js",
+    "main.css": "/instrument-io/static/css/main.8b67ff93.css",
+    "main.js": "/instrument-io/static/js/main.aa16477d.js",
     "index.html": "/instrument-io/index.html",
-    "main.b4b731ad.css.map": "/instrument-io/static/css/main.b4b731ad.css.map",
-    "main.90cad702.js.map": "/instrument-io/static/js/main.90cad702.js.map"
+    "main.8b67ff93.css.map": "/instrument-io/static/css/main.8b67ff93.css.map",
+    "main.aa16477d.js.map": "/instrument-io/static/js/main.aa16477d.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4b731ad.css",
-    "static/js/main.90cad702.js"
+    "static/css/main.8b67ff93.css",
+    "static/js/main.aa16477d.js"
   ]
 }

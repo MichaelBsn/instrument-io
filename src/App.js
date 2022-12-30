@@ -14,66 +14,76 @@ function App() {
     <div className="App">
       {audioContext ? (
         <div className='keyboard'>
-          <Key
-            audioContext={audioContext}
-            noteName={'C5'}
-            frequency={523.25}
-            waveform={'triangle'} />
-          <Key
-            audioContext={audioContext}
-            noteName={'Db5'}
-            frequency={554.37}
-            waveform={'triangle'} />
-          <Key
-            audioContext={audioContext}
-            noteName={'D5'}
-            frequency={587.33}
-            waveform={'triangle'} />
-          <Key
-            audioContext={audioContext}
-            noteName={'Eb5'}
-            frequency={622.25}
-            waveform={'triangle'} />
-          <Key
-            audioContext={audioContext}
-            noteName={'E5'}
-            frequency={659.25}
-            waveform={'triangle'} />
-          <Key
-            audioContext={audioContext}
-            noteName={'F5'}
-            frequency={698.46}
-            waveform={'triangle'} />
-          <Key
-            audioContext={audioContext}
-            noteName={'Gb5'}
-            frequency={739.99}
-            waveform={'triangle'} />
-          <Key
-            audioContext={audioContext}
-            noteName={'G5'}
-            frequency={783.99}
-            waveform={'triangle'} />
-          <Key
-            audioContext={audioContext}
-            noteName={'Ab5'}
-            frequency={830.61}
-            waveform={'triangle'} />
-          <Key
-            audioContext={audioContext}
-            noteName={'A5'}
-            frequency={880}
-            waveform={'triangle'} />
-          <Key
-            audioContext={audioContext}
-            noteName={'Bb5'}
-            frequency={932.33}
-            waveform={'triangle'} />
-          <Key
-            audioContext={audioContext}
-            noteName={'B5'}
-            frequency={987.77}
-            waveform={'triangle'} />
+          <div className='course'>
+            <Key
+              audioContext={audioContext}
+              noteName={'C5'}
+              frequency={523.25}
+              waveform={'triangle'} />
+            <Key
+              audioContext={audioContext}
+              noteName={'Db5'}
+              frequency={554.37}
+              waveform={'triangle'} />
+            <Key
+              audioContext={audioContext}
+              noteName={'D5'}
+              frequency={587.33}
+              waveform={'triangle'} />
+            <Key
+              audioContext={audioContext}
+              noteName={'Eb5'}
+              frequency={622.25}
+              waveform={'triangle'} />
+            <Key
+              audioContext={audioContext}
+              noteName={'E5'}
+              frequency={659.25}
+              waveform={'triangle'} />
+            <Key
+              audioContext={audioContext}
+              noteName={'F5'}
+              frequency={698.46}
+              waveform={'triangle'} />
+            <Key
+              audioContext={audioContext}
+              noteName={'Gb5'}
+              frequency={739.99}
+              waveform={'triangle'} />
+          </div>
+          <div className='course'>
+            <Key
+              audioContext={audioContext}
+              noteName={'G5'}
+              frequency={783.99}
+              waveform={'triangle'} />
+            <Key
+              audioContext={audioContext}
+              noteName={'Ab5'}
+              frequency={830.61}
+              waveform={'triangle'} />
+            <Key
+              audioContext={audioContext}
+              noteName={'A5'}
+              frequency={880}
+              waveform={'triangle'} />
+            <Key
+              audioContext={audioContext}
+              noteName={'Bb5'}
+              frequency={932.33}
+              waveform={'triangle'} />
+            <Key
+              audioContext={audioContext}
+              noteName={'B5'}
+              frequency={987.77}
+              waveform={'triangle'} />
+            <Key
+              audioContext={audioContext}
+              noteName={'C6'}
+              frequency={1046.50}
+              waveform={'triangle'} />
+          </div>
+
         </div>
       ) : (
         <>

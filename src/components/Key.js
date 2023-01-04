@@ -4,11 +4,11 @@ const Key = ({ audioContext, noteName, frequency, waveform }) => {
 
     const keyGain = useRef(audioContext.createGain()).current
 
-    let attackTime = 0.1
-    let sustainTime = 0.25
-    let releaseTime = 0.3
+    let attackTime = 0.05
+    let sustainTime = 0.3
+    let releaseTime = 0.05
     let minGain = 0
-    let maxGain = 0.75
+    let maxGain = 0.25
 
     useEffect(() => {
         keyGain.connect(audioContext.destination)
@@ -16,6 +16,7 @@ const Key = ({ audioContext, noteName, frequency, waveform }) => {
 
     function makeBeep(freq, wave) {
         const noteOsc = audioContext.createOscillator();
+
         noteOsc.frequency.setValueAtTime(freq, 0)
         noteOsc.type = wave
 

@@ -17,6 +17,11 @@ function App() {
           <div className='course'>
             <Key
               audioContext={audioContext}
+              noteName={'E4'}
+              frequency={329.63}
+              waveform={'sine'} />
+            <Key
+              audioContext={audioContext}
               noteName={'F4'}
               frequency={349.23}
               waveform={'sine'} />
@@ -40,6 +45,13 @@ function App() {
               noteName={'A4'}
               frequency={440.00}
               waveform={'sine'} />
+          </div>
+          <div className='course'>
+            <Key
+              audioContext={audioContext}
+              noteName={'A4'}
+              frequency={440.00}
+              waveform={'sine'} />
             <Key
               audioContext={audioContext}
               noteName={'Bb4'}
@@ -55,14 +67,18 @@ function App() {
               noteName={'C5'}
               frequency={523.25}
               waveform={'sine'} />
-          </div>
-          <div className='course'>
-
             <Key
               audioContext={audioContext}
               noteName={'Db5'}
               frequency={554.37}
               waveform={'sine'} />
+            <Key
+              audioContext={audioContext}
+              noteName={'D5'}
+              frequency={587.33}
+              waveform={'sine'} />
+          </div>
+          <div className='course'>
             <Key
               audioContext={audioContext}
               noteName={'D5'}
@@ -95,7 +111,11 @@ function App() {
               waveform={'sine'} />
           </div>
           <div className='course'>
-
+            <Key
+              audioContext={audioContext}
+              noteName={'G5'}
+              frequency={783.99}
+              waveform={'sine'} />
             <Key
               audioContext={audioContext}
               noteName={'Ab5'}
@@ -121,16 +141,7 @@ function App() {
               noteName={'C6'}
               frequency={1046.50}
               waveform={'sine'} />
-            <Key
-              audioContext={audioContext}
-              noteName={'Db6'}
-              frequency={1108.73}
-              waveform={'sine'} />
-            <Key
-              audioContext={audioContext}
-              noteName={'D6'}
-              frequency={1174.66}
-              waveform={'sine'} />
+
           </div>
 
         </div>

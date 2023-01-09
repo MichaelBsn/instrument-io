@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+body {
+  background-color: black;
+}
+
 .App {
   display: flex;
   align-items: center;
@@ -29,7 +33,14 @@
 }
 .course button {
   width: 100%;
-  height: 60px;
+  height: 100px;
+  background-color: white;
+}
+.course button:first-of-type {
+  background-color: tomato;
+}
+.course button:last-of-type {
+  background-color: darkkhaki;
 }
 
 /*# sourceMappingURL=App.css.map */

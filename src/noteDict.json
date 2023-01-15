@@ -1,0 +1,77 @@
+{
+    "A3": {
+        "frequency": 220.00
+    },
+    "As3Bb3": {
+        "frequency": 233.08
+    },
+    "B3": {
+        "frequency": 246.94
+    },
+    "C4": {
+        "frequency": 261.63
+    },
+    "Cs4Db4": {
+        "frequency": 277.18
+    },
+    "D4": {
+        "frequency": 293.66
+    },
+    "Ds4Eb4": {
+        "frequency": 311.13
+    },
+    "E4": {
+        "frequency": 329.63
+    },
+    "F4": {
+        "frequency": 349.23
+    },
+    "Fs4Gb4": {
+        "frequency": 369.99
+    },
+    "G4": {
+        "frequency": 392.00
+    },
+    "Gs4Ab4": {
+        "frequency": 415.30
+    },
+    "A4": {
+        "frequency": 440.00
+    },
+    "As4Bb4": {
+        "frequency": 466.16
+    },
+    "B4": {
+        "frequency": 493.88
+    },
+    "C5": {
+        "frequency": 523.25
+    },
+    "Cs5Db5": {
+        "frequency": 554.37
+    },
+    "D5": {
+        "frequency": 587.33
+    },
+    "Ds5Eb5": {
+        "frequency": 622.25
+    },
+    "E5": {
+        "frequency": 659.25
+    },
+    "F5": {
+        "frequency": 698.46
+    },
+    "Fs5Gb5": {
+        "frequency": 739.99
+    },
+    "G5": {
+        "frequency": 783.99
+    },
+    "Gs5Ab5": {
+        "frequency": 830.61
+    },
+    "A5": {
+        "frequency": 880.00
+    }
+}

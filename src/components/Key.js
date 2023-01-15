@@ -1,18 +1,26 @@
 import { useRef, useEffect } from 'react'
 
-const Key = ({ audioContext, noteName, frequency, waveform }) => {
+const Key = ({ audioContext, fretName, frequency, waveform }) => {
 
     const keyGain = useRef(audioContext.createGain()).current
-
-    let attackTime = 0.05
-    let sustainTime = 0.3
-    let releaseTime = 0.05
-    let minGain = 0
-    let maxGain = 0.25
 
     useEffect(() => {
         keyGain.connect(audioContext.destination)
     }, [])
+
+    let attackTime = 0.03
+    let sustainTime = 0.15
+    let releaseTime = 0.05
+    let minGain = 0
+    let maxGain = 0.25
+
+    function hertzToNote(hertz) {
+        let notes = ["C", "C#Db", "D", "D#Eb", "E", "F", "F#Gb", "G", "G#Ab", "A", "A#Bb", "B"];
+        let index = 12 * (Math.log(hertz / 440) / Math.log(2)) + 57;
+        let octave = Math.floor(index / 12);
+        let note = notes[Math.round(index) % 12] + octave;
+        return note;
+    }
 
     function makeBeep(freq, wave) {
         const noteOsc = audioContext.createOscillator();
@@ -35,7 +43,7 @@ const Key = ({ audioContext, noteName, frequency, waveform }) => {
     }
 
     return (
-        <button onMouseDown={handleKeyDown}>Key {noteName}</button>
+        <button className={fretName} onMouseDown={handleKeyDown}>Key {hertzToNote(frequency)}</button>
     )
 }
 

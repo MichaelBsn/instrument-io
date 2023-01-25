@@ -1,18 +1,17 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
-const Key = ({ audioContext, fretName, frequency, waveform }) => {
+const Key = ({ audioContext, gainValue = 0.25, fretName, frequency }) => {
 
     const keyGain = useRef(audioContext.createGain()).current
+    const [keyGainValue, setKeyGainValue] = useState(0.25)
 
     useEffect(() => {
         keyGain.connect(audioContext.destination)
     }, [])
 
-    let attackTime = 0.03
-    let sustainTime = 0.15
-    let releaseTime = 0.05
-    let minGain = 0
-    let maxGain = 0.25
+    useEffect(() => {
+        setKeyGainValue(gainValue)
+    }, [gainValue])
 
     function hertzToNote(hertz) {
         let notes = ["C", "C#Db", "D", "D#Eb", "E", "F", "F#Gb", "G", "G#Ab", "A", "A#Bb", "B"];
@@ -22,15 +21,29 @@ const Key = ({ audioContext, fretName, frequency, waveform }) => {
         return note;
     }
 
+    //not using this function right now but its handy to keep around
+    function noteToHertz(note) {
+        let notes = { "C": 16.35, "C#": 17.32, "D": 18.35, "D#": 19.45, "E": 20.60, "F": 21.83, "F#": 23.12, "G": 24.50, "G#": 25.96, "A": 27.50, "A#": 29.14, "B": 30.87 };
+        let noteName = note.slice(0, -1);
+        let octave = parseInt(note.slice(-1));
+        let hertz = notes[noteName] * Math.pow(2, octave - 4);
+        return hertz;
+    }
+
     function makeBeep(freq, wave) {
+        let attackTime = 0.03
+        let sustainTime = 0.15
+        let releaseTime = 0.05
+        let minGain = 0
+
         const noteOsc = audioContext.createOscillator();
 
         noteOsc.frequency.setValueAtTime(freq, 0)
         noteOsc.type = wave
 
         keyGain.gain.setValueAtTime(minGain, audioContext.currentTime) //attack
-        keyGain.gain.linearRampToValueAtTime(maxGain, audioContext.currentTime + attackTime) //decay
-        keyGain.gain.setValueAtTime(maxGain, audioContext.currentTime + attackTime + sustainTime) //sustain
+        keyGain.gain.linearRampToValueAtTime(keyGainValue, audioContext.currentTime + attackTime) //decay
+        keyGain.gain.setValueAtTime(keyGainValue, audioContext.currentTime + attackTime + sustainTime) //sustain
         keyGain.gain.linearRampToValueAtTime(minGain, audioContext.currentTime + attackTime + sustainTime + releaseTime) //release
 
         noteOsc.connect(keyGain)
@@ -39,11 +52,12 @@ const Key = ({ audioContext, fretName, frequency, waveform }) => {
     }
 
     const handleKeyDown = () => {
-        makeBeep(frequency, waveform)
+        makeBeep(frequency, "triangle")
+        makeBeep(frequency, "sine")
     }
 
     return (
-        <button className={fretName} onMouseDown={handleKeyDown}>Key {hertzToNote(frequency)}</button>
+        <button className={fretName} onMouseDown={handleKeyDown}>{hertzToNote(frequency)}</button>
     )
 }
 

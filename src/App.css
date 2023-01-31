@@ -19,12 +19,17 @@ body {
   height: 100vh;
   width: 100vw;
 }
-.App .controls {
+.App header {
   display: flex;
   width: 100%;
+  max-width: 600px;
+  min-height: 50px;
+  background-color: darkslategrey;
+  border-radius: 4px;
 }
-.App .controls .settings {
-  background-color: darkolivegreen;
+
+.settings {
+  background-color: darkslategrey;
   color: white;
   position: absolute;
   left: 0;
@@ -36,12 +41,52 @@ body {
   margin-top: auto;
   margin-bottom: auto;
   width: 90vw;
-  height: 90vh;
+  height: 75vh;
+  max-width: 550px;
+  border-radius: 10px;
 }
-.App .fretboard {
+.settings .gain-control {
   display: flex;
-  width: 300px;
-  height: 450px;
+  justify-content: space-evenly;
+}
+.settings .tuning-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.settings .tuning-control .tuning-container {
+  display: flex;
+  padding: 10px 0 10px;
+  width: 50vw;
+  max-width: 75vw;
+}
+.settings .tuning-control .tuning-container label {
+  width: 100%;
+  height: 100%;
+}
+
+.fretboard {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+}
+
+.course {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+.course button {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+.course button:first-of-type {
+  background-color: tomato;
 }
 
 .welcome h1 {
@@ -50,26 +95,6 @@ body {
 }
 .welcome button {
   padding: 10px;
-}
-
-.course {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-.course button {
-  width: 100%;
-  height: 85px;
-  background-color: white;
-}
-.course button:first-of-type {
-  background-color: tomato;
-}
-.course button:last-of-type {
-  background-color: darkkhaki;
 }
 
 /*# sourceMappingURL=App.css.map */
